@@ -1,0 +1,21 @@
+---
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: test
+spec:
+  type: pubsub.rabbitmq
+  version: v1
+  metadata:
+    - name: connectionString
+      value: amqp://user:password@localhost:5672
+    - name: prefetchCount
+      value: "1"
+    - name: requeueInFailure
+      value: "false"
+    - name: deletedWhenUnused
+      value: "true"
+    #- name: ttlInSeconds
+    #  value: "10"
+    #- name: enableDeadLetter
+    #  value: "true"
